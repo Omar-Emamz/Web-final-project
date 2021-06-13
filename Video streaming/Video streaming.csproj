@@ -67,19 +67,59 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\member.mdf" />
-    <Content Include="App_Data\member_log.ldf">
-      <DependentUpon>member.mdf</DependentUpon>
+    <Content Include="adminHome.aspx" />
+    <Content Include="App_Data\websiteDatabase.mdf" />
+    <Content Include="App_Data\websiteDatabase_log.ldf">
+      <DependentUpon>websiteDatabase.mdf</DependentUpon>
     </Content>
-    <Content Include="App_Data\user.mdf" />
-    <Content Include="App_Data\user_log.ldf">
-      <DependentUpon>user.mdf</DependentUpon>
-    </Content>
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\signout.png" />
+    <Content Include="memberHome.aspx" />
+    <Content Include="myVideos.aspx" />
     <Content Include="signin.aspx" />
     <Content Include="signup.aspx" />
+    <Content Include="uploadVideo.aspx" />
+    <Content Include="usersList.aspx" />
+    <Content Include="usersVideos.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminHome.aspx.cs">
+      <DependentUpon>adminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminHome.aspx.designer.cs">
+      <DependentUpon>adminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminMater.Master.cs">
+      <DependentUpon>adminMater.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminMater.Master.designer.cs">
+      <DependentUpon>adminMater.Master</DependentUpon>
+    </Compile>
+    <Compile Include="memberHome.aspx.cs">
+      <DependentUpon>memberHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="memberHome.aspx.designer.cs">
+      <DependentUpon>memberHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="memberMaster.Master.cs">
+      <DependentUpon>memberMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="memberMaster.Master.designer.cs">
+      <DependentUpon>memberMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="myVideos.aspx.cs">
+      <DependentUpon>myVideos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="myVideos.aspx.designer.cs">
+      <DependentUpon>myVideos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="signin.aspx.cs">
       <DependentUpon>signin.aspx</DependentUpon>
@@ -95,8 +135,38 @@
     <Compile Include="signup.aspx.designer.cs">
       <DependentUpon>signup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="uploadVideo.aspx.cs">
+      <DependentUpon>uploadVideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uploadVideo.aspx.designer.cs">
+      <DependentUpon>uploadVideo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usersList.aspx.cs">
+      <DependentUpon>usersList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usersList.aspx.designer.cs">
+      <DependentUpon>usersList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usersVideos.aspx.cs">
+      <DependentUpon>usersVideos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usersVideos.aspx.designer.cs">
+      <DependentUpon>usersVideos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminMater.Master" />
+    <Content Include="memberMaster.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -104,6 +174,10 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="thumbnailPics\" />
+    <Folder Include="videos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

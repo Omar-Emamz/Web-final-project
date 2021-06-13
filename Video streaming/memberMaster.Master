@@ -1,0 +1,136 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="memberMaster.master.cs" Inherits="Video_streaming.memberMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script runat="server">
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            string Fname = "";
+            if(Request.Cookies["userInfo"] != null)
+            {
+                Fname = Request.Cookies["userInfo"].Values["Fn"];
+            }
+            HyperLink6.Text = Fname;
+        }
+
+</script>
+
+    <style type="text/css">
+
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style16 {
+            width: 136px;
+            height: 56px;
+        }
+        .auto-style20 {
+            width: 175px;
+            height: 56px;
+            direction: ltr;
+        }
+        .auto-style13 {
+            width: 282px;
+            height: 56px;
+        }
+        .auto-style11 {
+            width: 176px;
+            height: 56px;
+        }
+        .auto-style10 {
+            width: 161px;
+            height: 56px;
+        }
+        .auto-style18 {
+            width: 263px;
+            height: 56px;
+        }
+        .auto-style19 {
+            width: 139px;
+            height: 56px;
+        }
+        .auto-style3 {
+            height: 68px;
+        }
+        .auto-style21 {
+            width: 132px;
+            height: 56px;
+        }
+        .auto-style22 {
+            width: 137px;
+            height: 56px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style16">
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:Image ID="Image1" runat="server" Height="42px" ImageUrl="~/Images/logo.png" Width="47px" />
+                    </td>
+                    <td class="auto-style21">
+                        <asp:HyperLink ID="HyperLink1" runat="server" Font-Bold="False" Font-Names="Arial Black" Font-Size="Large" Font-Overline="False" ForeColor="Black" NavigateUrl="memberHome.aspx">Home</asp:HyperLink>
+                    </td>
+                    <td class="auto-style20">
+                        <asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="False" Font-Names="Arial Black" Font-Size="Large" Font-Overline="False" ForeColor="Black" NavigateUrl="myVideos.aspx">My Videos</asp:HyperLink>
+                    </td>
+                    <td class="auto-style13">
+                        <asp:HyperLink ID="HyperLink5" runat="server" Font-Bold="False" Font-Names="Arial Black" Font-Size="Large" Font-Overline="False" ForeColor="Black" NavigateUrl="uploadVideo.aspx">Upload Video</asp:HyperLink>
+                    </td>
+                    <td class="auto-style11"></td>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style22"></td>
+                    <td class="auto-style18">
+                        <div style="margin-left: auto; margin-right: auto; text-align: center;" class="auto-style43">
+                        <asp:HyperLink ID="HyperLink6" runat="server" Font-Bold="False" Font-Names="Arial Black" Font-Size="Large" Font-Overline="False" ForeColor="Black" NavigateUrl="accountSettings.aspx">[HyperLink6]</asp:HyperLink>
+                    </div>
+                            </td>
+                    <td class="auto-style19">
+                        <div style="margin-left: auto; margin-right: auto; text-align: center;" class="auto-style43">
+                        <asp:Image ID="Image2" runat="server" Height="15px" ImageUrl="~/Images/signout.png" Width="15px" />
+&nbsp;<asp:HyperLink ID="HyperLink4" runat="server" Font-Bold="False" Font-Names="Arial Black" Font-Size="Large" Font-Overline="False" ForeColor="#555555" NavigateUrl="~/signin.aspx">Sign out </asp:HyperLink>
+                    </div>
+                            </td>
+                </tr>
+                <tr>
+                    <td class="auto-style3" colspan="9">
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="9">
+                        <div style="margin-left: auto; margin-right: auto; text-align: center;" class="auto-style43">
+                        <asp:Label ID="Label1" runat="server" Font-Size="Medium" ForeColor="#666666" Text="Copyright © 2012 2021"></asp:Label>
+                            </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <script runat="server">
+
     protected void sign(object sender, EventArgs e){
         SqlConnection conn = new SqlConnection();
         conn.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|member.mdf;Integrated Security=True";
@@ -13,9 +14,11 @@
             conn.Open();
             cmd_Insert.ExecuteNonQuery();
             conn.Close();
-
+            Response.Redirect("~/signin.aspx");
         }catch (SqlException error){
-            if (error.Number == 2627)
+            if(email_edit.Text != null) { }
+
+            else if (error.Number == 2627)
                 lblmsg.Text = "This email is already in use.";
             else
                 lblmsg.Text = "Error occured, Please Try again later.";
@@ -56,7 +59,7 @@
         }
 
         .auto-style41 {
-            height: 35px;
+            height: 61px;
         }
 
         .auto-style42 {
@@ -71,6 +74,17 @@
             height: 47px;
         }
 
+        .auto-style45 {
+            height: 105%;
+        }
+        .auto-style46 {
+            height: 123%;
+        }
+
+        .auto-style47 {
+            height: 16px;
+        }
+
         </style>
 </head>
 <body style=" margin:0; width: 100%; height: 100%; vertical-align:central; background:#eee; background-size: 100% 100%;">
@@ -78,17 +92,51 @@
         
             <table class="auto-style1">
                 <tr> 
+                    <td style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold; font-size: x-large;" class="auto-style46">
+                    </td>
+                </tr>
+                <tr> 
+                    <td style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold; font-size: x-large;" class="auto-style45">
+                    </td>
+                </tr>
+                <tr> 
+                    <td style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold; font-size: x-large;" class="auto-style45">
+                        &nbsp;</td>
+                </tr>
+                <tr> 
+                    <td style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold; font-size: x-large;" class="auto-style45">
+                        &nbsp;</td>
+                </tr>
+                <tr> 
+                    <td style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold; font-size: x-large;" class="auto-style45">
+                        &nbsp;</td>
+                </tr>
+                <tr> 
+                    <td style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold; font-size: x-large;" class="auto-style45">
+                        &nbsp;</td>
+                </tr>
+                <tr> 
+                    <td style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold; font-size: x-large;" class="auto-style45">
+                        &nbsp;</td>
+                </tr>
+                <tr> 
+                    <td style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold; font-size: x-large;" class="auto-style45">
+                        </td>
+                </tr>
+                <tr> 
                     <td style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold; font-size: x-large;" class="auto-style37">
                         <div style="margin-left: auto; margin-right: auto; text-align: center;" class="auto-style41">
                         
-                            <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Names="Franklin Gothic Medium,Arial Narrow,Arial,sans-serif" ForeColor="Black" Text="CREATE ACCOUNT" Font-Size="X-Large"></asp:Label>
-                        </div>
-                    </td>
+                            <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Names="Franklin Gothic Medium,Arial Narrow,Arial,sans-serif" ForeColor="Black" Text="CREATE ACCOUNT" Font-Size="XX-Large"></asp:Label>
+                   </div>
+                            </td>
                 </tr>
                 <tr>
                     <td class="auto-style32">
                         <div style="margin-left: auto; margin-right: auto; text-align: center;" class="auto-style43">
                             <asp:TextBox ID="firstname_edit" runat="server" Height="35px" Width="390px" OnTextChanged="TextBox1_TextChanged" placeholder="First name" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px"></asp:TextBox>
+                            <br />
+                            <br />
                     </div>
                             </td>
                         
@@ -120,6 +168,13 @@
                         <div style="margin-left: auto; margin-right: auto; text-align: center;" class="auto-style43"  >
                             <asp:TextBox ID="confPassword_edit" runat="server" Height="35px" Width="390px" placeholder="Confirm Password" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" TextMode="Password"></asp:TextBox>
                             </div>
+                        </td>
+                </tr>
+                <tr>
+                    <td  >
+                         <div style="margin-left: auto; margin-right: auto; text-align: center;" class="auto-style47"  >
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Passwords does not match." ControlToCompare="confPassword_edit" ControlToValidate="password_edit" Font-Size="Small" ForeColor="Red"></asp:CompareValidator>
+                             </div>
                         </td>
                 </tr>
                 <tr>

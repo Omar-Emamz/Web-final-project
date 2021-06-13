@@ -21,7 +21,25 @@
         reader = cmdSelect.ExecuteReader();
 
         if (reader.Read())
-            lblmsg.Text = "User Found";
+        {
+            string Fname = (string)reader.GetValue(0);
+            string Lname = (string)reader.GetValue(1);
+            string Email = (string)reader.GetValue(3);
+
+            HttpCookie coco = new HttpCookie("userInfo");
+            coco.Values.Add("email", email_edit.Text);
+            coco.Values.Add("passw", password_edit.Text);
+            coco.Values.Add("Fn", Fname);
+            coco.Values.Add("Ln", Lname);
+
+            coco.Expires = DateTime.Now.AddDays(3);
+            Response.Cookies.Add(coco);
+
+            if (email_edit.Text == "admin")
+                Response.Redirect("~/adminHome.aspx");
+            else
+                Response.Redirect("~/memberHome.aspx");
+        }
         else
             lblmsg.Text = "Wrong e-mail or password";
 
@@ -42,9 +60,6 @@
         .auto-style4 {
             height: 58px;
         }
-        .auto-style6 {
-            height: 42px;
-        }
         .auto-style7 {
             height: 40px;
         }
@@ -54,6 +69,9 @@
         .auto-style9 {
             height: 8px;
         }
+        .auto-style10 {
+            height: 98px;
+        }
     </style>
 </head>
 <body style=" margin:0; width: 100%; height: 100%; vertical-align:central; background:#eee; background-size: 100% 100%;">
@@ -61,8 +79,16 @@
         <div style="margin-left: auto; margin-right: auto; text-align: center;">
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style6">
-                            <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Names="Franklin Gothic Medium,Arial Narrow,Arial,sans-serif" ForeColor="Black" Text="LOGIN" Font-Size="X-Large"></asp:Label>
+                    <td class="auto-style10">
+                            &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style10">
+                            &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style10">
+                            <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Names="Franklin Gothic Medium,Arial Narrow,Arial,sans-serif" ForeColor="Black" Text="LOGIN" Font-Size="XX-Large"></asp:Label>
                     </td>
                 </tr>
                 <tr>
