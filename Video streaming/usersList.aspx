@@ -20,6 +20,9 @@
         height: 54px;
         width: 524px;
     }
+    .table_{
+        text-align: center
+    }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -38,9 +41,9 @@
             <td class="auto-style25">
             </td>
             <td class="auto-style24">
-                <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="email" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Horizontal" Height="216px" Width="623px">
+                <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="email" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Horizontal" Height="216px" Width="623px" CssClass="table_">
     <Columns>
-        <asp:CommandField ShowEditButton="True" ShowDeleteButton="True" />
+        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
         <asp:BoundField DataField="firstName" HeaderText="firstName" SortExpression="firstName" />
         <asp:BoundField DataField="lastName" HeaderText="lastName" SortExpression="lastName" />
         <asp:BoundField DataField="email" HeaderText="email" ReadOnly="True" SortExpression="email" />

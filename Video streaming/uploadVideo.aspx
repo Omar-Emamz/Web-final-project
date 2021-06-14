@@ -5,18 +5,18 @@
     <script runat="server">
         public int getVideoCount()
         {
-           string stmt = "SELECT COUNT(*) FROM Video";
-           int count = 0;
+            string stmt = "SELECT COUNT(*) FROM media";
+            int count = 0;
 
-           using(SqlConnection thisConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|member.mdf;Integrated Security=True"))
-           {
-               using(SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
-               {
-                   thisConnection.Open();
-                   count = (int)cmdCount.ExecuteScalar();
-               }
-           }
-           return count;
+            using(SqlConnection thisConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|websiteDatabase.mdf;Integrated Security=True"))
+            {
+                using(SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
+                {
+                    thisConnection.Open();
+                    count = (int)cmdCount.ExecuteScalar();
+                }
+            }
+            return count;
         }
 
         protected void sign(object sender, EventArgs e)
@@ -35,18 +35,21 @@
 
 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|member.mdf;Integrated Security=True";
-            string str_Insert = String.Format("INSERT INTO video VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", getVideoCount(), name_text, email, 0, "", "");
+            conn.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|websiteDatabase.mdf;Integrated Security=True";
+            string str_Insert = String.Format("INSERT INTO media VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", getVideoCount(), name_text.Text, 0, email, "thumbnailPics/" + getVideoCount() + ".jpg", "videos/" + getVideoCount() + ".mp4");
             SqlCommand cmd_Insert = new SqlCommand(str_Insert, conn);
 
-            try{
-                conn.Open();
-                cmd_Insert.ExecuteNonQuery();
-                conn.Close();
-                Response.Redirect("~/myVideos.aspx");
-            }catch{
-                lblmsg.Text = "Error occured, Please Try again later.";
-            }
+            //try
+            //{
+            conn.Open();
+            cmd_Insert.ExecuteNonQuery();
+            conn.Close();
+            Response.Redirect("~/myVideos.aspx");
+            //}
+            //catch
+            //{
+            //    lblmsg.Text = "Error occured, Please Try again later.";
+            //}
         }
 </script>
     <style type="text/css">

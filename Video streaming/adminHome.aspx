@@ -5,10 +5,10 @@
     <script runat="server">
         public int getVideoCount()
         {
-           string stmt = "SELECT COUNT(*) FROM Video";
+           string stmt = "SELECT COUNT(*) FROM media";
            int count = 0;
 
-           using(SqlConnection thisConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|member.mdf;Integrated Security=True"))
+           using(SqlConnection thisConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|websiteDatabase.mdf;Integrated Security=True"))
            {
                using(SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
                {
@@ -23,7 +23,7 @@
            string stmt = "SELECT COUNT(*) FROM Member";
            int count = 0;
 
-           using(SqlConnection thisConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|member.mdf;Integrated Security=True"))
+           using(SqlConnection thisConnection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|websiteDatabase.mdf;Integrated Security=True"))
            {
                using(SqlCommand cmdCount = new SqlCommand(stmt, thisConnection))
                {
@@ -42,8 +42,7 @@
     <style type="text/css">
     .auto-style28 {
         width: 209px;
-        direction: ltr;
-    }
+        }
         .auto-style22 {
             width: 334px;
         }
@@ -58,7 +57,8 @@
     .auto-style32 {
         width: 209px;
         height: 48px;
-    }
+            direction: ltr;
+        }
     .auto-style33 {
         width: 334px;
         height: 48px;
@@ -110,7 +110,8 @@
             </td>
     </tr>
     <tr>
-        <td class="auto-style40"></td>
+        <td class="auto-style40">
+            &nbsp;</td>
         <td class="auto-style32">
             <asp:Label ID="Label2" runat="server" BorderStyle="None" Font-Names="Arial Black,Large" Text="Number of Members:"></asp:Label>
         </td>

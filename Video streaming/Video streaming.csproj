@@ -67,11 +67,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="accountSettings.aspx" />
     <Content Include="adminHome.aspx" />
     <Content Include="App_Data\websiteDatabase.mdf" />
     <Content Include="App_Data\websiteDatabase_log.ldf">
       <DependentUpon>websiteDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="Images\background.jpg" />
+    <Content Include="Images\like.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\signout.png" />
     <Content Include="memberHome.aspx" />
@@ -81,10 +84,28 @@
     <Content Include="uploadVideo.aspx" />
     <Content Include="usersList.aspx" />
     <Content Include="usersVideos.aspx" />
+    <Content Include="videoPage0.aspx" />
+    <Content Include="videoPage1.aspx" />
+    <Content Include="videoPage10.aspx" />
+    <Content Include="videoPage2.aspx" />
+    <Content Include="videoPage3.aspx" />
+    <Content Include="videoPage4.aspx" />
+    <Content Include="videoPage5.aspx" />
+    <Content Include="videoPage6.aspx" />
+    <Content Include="videoPage7.aspx" />
+    <Content Include="videoPage8.aspx" />
+    <Content Include="videoPage9.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="accountSettings.aspx.cs">
+      <DependentUpon>accountSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="accountSettings.aspx.designer.cs">
+      <DependentUpon>accountSettings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="adminHome.aspx.cs">
       <DependentUpon>adminHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,6 +176,13 @@
     </Compile>
     <Compile Include="usersVideos.aspx.designer.cs">
       <DependentUpon>usersVideos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="videoPage0.aspx.cs">
+      <DependentUpon>videoPage0.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="videoPage0.aspx.designer.cs">
+      <DependentUpon>videoPage0.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

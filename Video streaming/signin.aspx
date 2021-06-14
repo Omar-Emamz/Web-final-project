@@ -6,7 +6,7 @@
 <script runat="server">
     protected void login_btn_Click(object sender, EventArgs e){
         SqlConnection conn = new SqlConnection();
-        conn.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|member.mdf;Integrated Security=True";
+        conn.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|websiteDatabase.mdf;Integrated Security=True";
 
         string strSelect = "SELECT * FROM member "
             + " WHERE email = '" + email_edit.Text + "' AND password = '"
@@ -88,7 +88,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style10">
-                            <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Names="Franklin Gothic Medium,Arial Narrow,Arial,sans-serif" ForeColor="Black" Text="LOGIN" Font-Size="XX-Large"></asp:Label>
+                            <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Names="Arial Black,Large" ForeColor="Black" Text="LOGIN" Font-Size="XX-Large"></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -119,7 +119,7 @@
                 <tr>
                     <td>
                         <asp:Label ID="Label1" runat="server" Font-Names="Franklin Gothic Medium,Arial Narrow,Arial,sans-serif" Text="Not a member? " Font-Size="Small" ForeColor="#666666"></asp:Label>
-                        <asp:HyperLink ID="signup_hyper" runat="server" Font-Names="Franklin Gothic Medium,Arial Narrow,Arial,sans-serif" Font-Underline="True" Font-Size="Small" ForeColor="#666666">Sign up now</asp:HyperLink>
+                        <asp:HyperLink ID="signup_hyper" runat="server" Font-Names="Franklin Gothic Medium,Arial Narrow,Arial,sans-serif" Font-Underline="True" Font-Size="Small" ForeColor="#666666" NavigateUrl="~/signup.aspx">Sign up now</asp:HyperLink>
                     </td>
                 </tr>
                 </table>

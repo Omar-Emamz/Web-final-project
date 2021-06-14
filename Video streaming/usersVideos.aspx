@@ -21,6 +21,9 @@
     .auto-style28 {
         height: 60px;
     }
+    .table_{
+        text-align: center
+    }
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -36,7 +39,7 @@
         <td class="auto-style26"></td>
         <td class="auto-style27">
             <div class="auto-style22">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Horizontal" Height="274px" Width="660px" AllowSorting="True">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Horizontal" Height="274px" Width="660px" AllowSorting="True" CssClass="table_">
                     <Columns>
                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                         <asp:BoundField DataField="id" HeaderText="id" ReadOnly="True" SortExpression="id" />
@@ -55,7 +58,7 @@
                     <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
             </div>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Video] WHERE [id] = @id" InsertCommand="INSERT INTO [Video] ([id], [name], [owner], [likes], [thumbnail]) VALUES (@id, @name, @owner, @likes, @thumbnail)" SelectCommand="SELECT [id], [name], [owner], [likes], [thumbnail] FROM [Video]" UpdateCommand="UPDATE [Video] SET [name] = @name, [owner] = @owner, [likes] = @likes, [thumbnail] = @thumbnail WHERE [id] = @id">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [media] WHERE [id] = @id" InsertCommand="INSERT INTO [media] ([id], [name], [owner], [likes], [thumbnail]) VALUES (@id, @name, @owner, @likes, @thumbnail)" SelectCommand="SELECT [id], [name], [owner], [likes], [thumbnail] FROM [media]" UpdateCommand="UPDATE [media] SET [name] = @name, [owner] = @owner, [likes] = @likes, [thumbnail] = @thumbnail WHERE [id] = @id">
                 <DeleteParameters>
                     <asp:Parameter Name="id" Type="Int32" />
                 </DeleteParameters>
